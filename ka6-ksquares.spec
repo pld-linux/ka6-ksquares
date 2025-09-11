@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.0
+%define		kdeappsver	25.08.1
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		ksquares
 Summary:	ksquares
 Name:		ka6-%{kaname}
-Version:	25.08.0
+Version:	25.08.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	e8ab59e7bed32687f5f02ae6634b0bd5
+# Source0-md5:	235dd9c4cbf66bd9353ef11dc38aebc4
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core
 BuildRequires:	Qt6Gui-devel >= 5.11.1
@@ -33,6 +33,7 @@ BuildRequires:	kf6-kwidgetsaddons-devel >= %{kframever}
 BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
+%requires_eq_to Qt6Core Qt6Core-devel
 Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
